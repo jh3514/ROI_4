@@ -28,3 +28,18 @@ C:\Users\wjdwn\OneDrive\바탕 화면\ROI\ROI\obj\Debug\ROI.csproj.GenerateResou
 C:\Users\wjdwn\OneDrive\바탕 화면\ROI\ROI\obj\Debug\ROI.csproj.CoreCompileInputs.cache
 C:\Users\wjdwn\OneDrive\바탕 화면\ROI\ROI\obj\Debug\ROI.exe
 C:\Users\wjdwn\OneDrive\바탕 화면\ROI\ROI\obj\Debug\ROI.pdb
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\bin\Debug\ROI.exe.config
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\bin\Debug\ROI.exe
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\bin\Debug\ROI.pdb
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.csproj.AssemblyReference.cache
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\Pages\MainPage.g.cs
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\App.g.cs
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI_MarkupCompile.cache
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI_MarkupCompile.lref
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\Pages\MainPage.baml
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.g.resources
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.Properties.Resources.resources
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.csproj.GenerateResource.cache
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.csproj.CoreCompileInputs.cache
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.exe
+C:\Users\as462\Documents\VS\ROI_4\ROI\ROI\obj\Debug\ROI.pdb

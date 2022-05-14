@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using ROI.Services;
 
 namespace ROI.Pages
 {
@@ -13,6 +14,9 @@ namespace ROI.Pages
         private double windowWidth   = 0;
         private ScaleTransform windowScale = new ScaleTransform();
         public DispatcherTimer timer;
+        private int roadType;
+        private int emergencyType;
+        private string photo;
 
         //Function
         public MainPage()
@@ -86,7 +90,7 @@ namespace ROI.Pages
         //
         // Emergency Event Function
         //
-        public void Emergency() //int roadType, BitmapImage photo, string text
+        public void Emergency()
         {
             try
             {
@@ -108,7 +112,7 @@ namespace ROI.Pages
                 // Set ROI UI
                 //
 
-                //UI_Img_Road.Source = new BitmapImage(new Uri($"pack://application:,,,/Resources/Road{roadType}.jpg"));
+                UI_Img_Road.Source = new BitmapImage(new Uri($"pack://application:,,,/Resources/load_t_0{roadType}.jpg"));
                 //UI_Img_Photo.Source = photo;
                 //UI_Label_Message.Content = text;
 
@@ -130,7 +134,8 @@ namespace ROI.Pages
             if (UI_Label_Message.Foreground.ToString() != "#FFFF0000")  //If Label Message Color is Red
             {
                 //Road Border Img Enable
-                UI_Img_Emergency.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/emergency_02_01.png"));
+                
+                UI_Img_Emergency.Source = new BitmapImage(new Uri($"pack://application:,,,/Resources/emergency_0{roadType}_0{emergencyType}.png"));
                 UI_Label_Message.Foreground = new SolidColorBrush(Colors.Red);
             }
             else
@@ -148,12 +153,38 @@ namespace ROI.Pages
             UI_Img_Emergency.Source = null;
         }
 
+        private void parseAPI(string API)
+        {
+            string temp = API;
+            int finder1 = 0;
+            int finder2 = 0;
+            int finder3 = 0;
+            int finder4 = 0;
+
+            finder1 = temp.IndexOf("\":");
+            string aa = temp.Substring(finder1 + 2, 1);
+            finder2 = temp.IndexOf("\":", finder1 + 2);
+            string bb = temp.Substring(finder2 + 2, 1);
+            finder3 = temp.IndexOf("\":", finder2 + 3);
+            string cc = temp.Substring(finder3 + 3);
+            string[] dd = cc.Split('"');
+
+            roadType = Convert.ToInt32(aa);
+            emergencyType = Convert.ToInt32(bb);
+            photo = dd[0];
+
+            Emergency();
+        }
+
         //
         // Test Function
         //
         private void Btn_Clicked(object sender, RoutedEventArgs e)
         {
-            Emergency();
+            if (APIProtocolService.Init())
+            {
+                parseAPI(APIProtocolService.QueryAPI());
+            }
         }
     }
 }
