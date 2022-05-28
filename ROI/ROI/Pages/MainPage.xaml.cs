@@ -45,8 +45,8 @@ namespace ROI.Pages
             // ROI UI Init
             //_
 
-            UI_Img_Road.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/load_t_02.jpg"));
-            UI_Img_Photo.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/photo_01.png"));
+            //UI_Img_Road.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/load_t_02.jpg"));
+            //UI_Img_Photo.Source = new BitmapImage(new Uri("https://img.sbs.co.kr/newimg/news/20190525/201317086_1280.jpg"));
             UI_Label_Message.Content = "No Event";
             UI_Label_Message.FontSize = 80;
             UI_Label_Message.VerticalContentAlignment = VerticalAlignment.Center;
@@ -131,6 +131,7 @@ namespace ROI.Pages
         private void UI_EmergencyMode(object sender, EventArgs e)
         {
             UI_Label_Message.Content = "Warning";
+
             if (UI_Label_Message.Foreground.ToString() != "#FFFF0000")  //If Label Message Color is Red
             {
                 //Road Border Img Enable
@@ -155,25 +156,44 @@ namespace ROI.Pages
 
         private void parseAPI(string API)
         {
-            string temp = API;
-            int finder1 = 0;
-            int finder2 = 0;
-            int finder3 = 0;
-            int finder4 = 0;
+            try
+            {
+                string temp = API;
+                int finder1 = 0;
+                int finder2 = 0;
+                int finder3 = 0;
+                int finder4 = 0;
 
-            finder1 = temp.IndexOf("\":");
-            string aa = temp.Substring(finder1 + 2, 1);
-            finder2 = temp.IndexOf("\":", finder1 + 2);
-            string bb = temp.Substring(finder2 + 2, 1);
-            finder3 = temp.IndexOf("\":", finder2 + 3);
-            string cc = temp.Substring(finder3 + 3);
-            string[] dd = cc.Split('"');
+                finder1 = temp.IndexOf("\":");
+                string aa = temp.Substring(finder1 + 2, 1);
+                
+                finder2 = temp.IndexOf("\":", finder1 + 2);
+                string bb = temp.Substring(finder2 + 2, 1);
+                
+                finder3 = temp.IndexOf("\":", finder2 + 3);
+                string cc = temp.Substring(finder3 + 3);
 
-            roadType = Convert.ToInt32(aa);
-            emergencyType = Convert.ToInt32(bb);
-            photo = dd[0];
+                
+                string[] dd = cc.Split('"');
 
-            Emergency();
+                roadType = Convert.ToInt32(aa);
+                emergencyType = Convert.ToInt32(bb);
+                photo = dd[0];
+                
+                
+                Emergency();
+                UI_Img_Photo.Source = new BitmapImage(new Uri(dd[0]));
+
+
+              
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Error! : Can not Split API data");
+            }
+            
         }
 
         //

@@ -60,6 +60,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\APIProtocolService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,11 +73,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,16 +98,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\load_t_05.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\load_t_04.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\load_t_02.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\load_t_03.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\emergency_02_01.png" />
@@ -153,6 +144,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\emergency_05_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\load_t_05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\load_t_04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\load_t_03.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
