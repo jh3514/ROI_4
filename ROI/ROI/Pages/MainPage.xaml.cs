@@ -53,6 +53,9 @@ namespace ROI.Pages
             UI_Label_Message.FontSize = 80;
             UI_Label_Message.VerticalContentAlignment = VerticalAlignment.Center;
             UI_Label_Message.HorizontalContentAlignment = HorizontalAlignment.Center;
+            
+            UI_Img_Road.Stretch = Stretch.Fill;
+            UI_Img_Emergency.Stretch = Stretch.Fill;
             UI_Img_Photo.Stretch = Stretch.Fill;
         }
 
@@ -154,6 +157,7 @@ namespace ROI.Pages
         {
             UI_Label_Message.Content = "No Event";
             UI_Label_Message.Foreground = new SolidColorBrush(Colors.Black);
+            
             UI_Img_Emergency.Source = null;
             UI_Img_Photo.Visibility = Visibility.Collapsed;        
         }
