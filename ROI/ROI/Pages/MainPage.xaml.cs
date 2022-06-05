@@ -137,6 +137,7 @@ namespace ROI.Pages
         private void UI_EmergencyMode(object sender, EventArgs e)
         {
             UI_Label_Message.Content = $"{emergencyType}차선 사고 발생";
+            UI_Img_Photo.Visibility = Visibility.Visible;
 
             if (UI_Label_Message.Foreground.ToString() != "#FFFF0000")  //If Label Message Color is Red
             {
@@ -221,9 +222,9 @@ namespace ROI.Pages
 
             if (APIProtocolService.Init())
             {
-                //parseAPI(APIProtocolService.QueryAPI());
-                APIProtocolService.StartSession();
-                sessionThread = new Thread(new ThreadStart(SessionFlagScanner));
+                parseAPI(APIProtocolService.QueryAPI());
+                //APIProtocolService.StartSession();
+                //sessionThread = new Thread(new ThreadStart(SessionFlagScanner));
             }
         }
     }
