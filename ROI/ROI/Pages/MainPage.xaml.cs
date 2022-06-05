@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -17,6 +18,7 @@ namespace ROI.Pages
         private int roadType;
         private int emergencyType;
         private string photo;
+        private Thread sessionThread;
 
         //Function
         public MainPage()
@@ -186,10 +188,6 @@ namespace ROI.Pages
                 Emergency();
                 UI_Img_Photo.Source = new BitmapImage(new Uri(dd[0]));
 
-
-              
-
-
             }
             catch(Exception e)
             {
@@ -198,14 +196,30 @@ namespace ROI.Pages
             
         }
 
+        private void  SessionFlagScanner()
+        {
+            while (true)
+            {
+                if (APIProtocolService.recv_Flag)
+                {
+                    string data = APIProtocolService.getSessionData();
+                    //Parse and Use "data" variant
+                }
+            }
+        }
+
         //
         // Test Function
         //
         private void Btn_Clicked(object sender, RoutedEventArgs e)
         {
+            LogCatService.Write($"{DateTime.Now.ToString("MMddHHmmss")} :: Session Protocol Execute");
+
             if (APIProtocolService.Init())
             {
-                parseAPI(APIProtocolService.QueryAPI());
+                //parseAPI(APIProtocolService.QueryAPI());
+                APIProtocolService.StartSession();
+                sessionThread = new Thread(new ThreadStart(SessionFlagScanner));
             }
         }
     }

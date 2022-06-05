@@ -66,6 +66,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\APIProtocolService.cs" />
+    <Compile Include="Services\LogCatService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\MainPage.xaml.cs">
