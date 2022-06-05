@@ -51,6 +51,7 @@ namespace ROI.Pages
             UI_Label_Message.FontSize = 80;
             UI_Label_Message.VerticalContentAlignment = VerticalAlignment.Center;
             UI_Label_Message.HorizontalContentAlignment = HorizontalAlignment.Center;
+            UI_Img_Photo.Stretch = Stretch.Fill;
         }
 
         //
@@ -130,7 +131,7 @@ namespace ROI.Pages
 
         private void UI_EmergencyMode(object sender, EventArgs e)
         {
-            UI_Label_Message.Content = "Warning";
+            UI_Label_Message.Content = $"{emergencyType}차선 사고 발생";
 
             if (UI_Label_Message.Foreground.ToString() != "#FFFF0000")  //If Label Message Color is Red
             {
@@ -152,6 +153,7 @@ namespace ROI.Pages
             UI_Label_Message.Content = "No Event";
             UI_Label_Message.Foreground = new SolidColorBrush(Colors.Black);
             UI_Img_Emergency.Source = null;
+            UI_Img_Photo.Visibility = Visibility.Collapsed;        
         }
 
         private void parseAPI(string API)
@@ -189,7 +191,7 @@ namespace ROI.Pages
 
 
             }
-            catch
+            catch(Exception e)
             {
                 MessageBox.Show("Error! : Can not Split API data");
             }
