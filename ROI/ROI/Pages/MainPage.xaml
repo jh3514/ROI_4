@@ -11,13 +11,13 @@
                 Height="200" Width="1892" Margin="10,10,0,0" 
                 HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image  x:Name="UI_Img_Road"
-                Height="813" Width="960" Margin="15,204,0,0"
+                 Height="813" Width="868" Margin="15,204,0,0"
                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Image  x:Name="UI_Img_Emergency"
-                Height="813" Width="960" Margin="15,204,0,0"
+                Height="813" Width="868" Margin="15,204,0,0"
                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Image  x:Name="UI_Img_Photo"
-                Height="851" Width="927" Margin="0,166,10,0"
+                Height="813" Width="960" Margin="15,204,0,0"
                 VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="856,970,0,0" VerticalAlignment="Top" Width="114" Click="Btn_Clicked" Height="47"/>
     </Grid>
